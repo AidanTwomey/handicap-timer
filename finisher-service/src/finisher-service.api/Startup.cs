@@ -27,6 +27,8 @@ namespace finisher_service.api
         public void ConfigureServices(IServiceCollection services)
         {
 
+            // services.AddTransient<
+
             services.AddControllers();
             services.AddHealthChecks();
             services.AddSwaggerGen(c =>
