@@ -83,11 +83,11 @@ namespace finisher_service.tests.Features
         [Xunit.SkippableFactAttribute(DisplayName="Healthcheck")]
         [Xunit.TraitAttribute("FeatureTitle", "Finish Events")]
         [Xunit.TraitAttribute("Description", "Healthcheck")]
-        [Xunit.TraitAttribute("Category", "Add")]
+        [Xunit.TraitAttribute("Category", "Healthcheck")]
         public void Healthcheck()
         {
             string[] tagsOfScenario = new string[] {
-                    "Add"};
+                    "Healthcheck"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Healthcheck", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 4
@@ -108,6 +108,39 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 7
  testRunner.Then("the response should be 200", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="A runner crosses the finish line")]
+        [Xunit.TraitAttribute("FeatureTitle", "Finish Events")]
+        [Xunit.TraitAttribute("Description", "A runner crosses the finish line")]
+        [Xunit.TraitAttribute("Category", "FinishEvent")]
+        public void ARunnerCrossesTheFinishLine()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "FinishEvent"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("A runner crosses the finish line", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 10
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 11
+ testRunner.Given("the service is initialised", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 12
+ testRunner.When("a FinishEvent is posted to the finsih endpoint", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 13
+ testRunner.Then("the finish is persisted", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

@@ -5,12 +5,13 @@ WORKDIR /source
 # copy csproj and restore as distinct layers
 COPY *.sln .
 COPY src/finisher-service.api/*.csproj ./src/finisher-service.api/
+COPY src/finisher-service.lib/*.csproj ./src/finisher-service.lib/
 COPY tests/finisher-service.tests/*.csproj ./tests/finisher-service.tests/
 RUN dotnet restore
 
 # copy everything else and build app
-COPY src/finisher-service.api/. ./src/finisher-service.api/
-WORKDIR /source/src/finisher-service.api
+COPY src/. .
+WORKDIR /source/finisher-service.api
 RUN dotnet publish -c release -o /app
 
 # final stage/image
