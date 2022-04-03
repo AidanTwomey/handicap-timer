@@ -18,7 +18,7 @@ namespace finisher_service.api.Controllers
         [HttpPost]
         public IActionResult Post(FinishEvent finish)
         {
-            persister.Persist(0);
+            persister.PersistFinishAsync();
 
             return Ok();
         }

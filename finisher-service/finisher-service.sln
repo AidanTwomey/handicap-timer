@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "finisher-service.api", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "finisher-service.lib", "src\finisher-service.lib\finisher-service.lib.csproj", "{F5BA31AF-5540-46DF-B4E7-60D82AA22244}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "finisher-service.unit.tests", "tests\finisher-service.unit.tests\finisher-service.unit.tests.csproj", "{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,10 +64,23 @@ Global
 		{F5BA31AF-5540-46DF-B4E7-60D82AA22244}.Release|x64.Build.0 = Release|Any CPU
 		{F5BA31AF-5540-46DF-B4E7-60D82AA22244}.Release|x86.ActiveCfg = Release|Any CPU
 		{F5BA31AF-5540-46DF-B4E7-60D82AA22244}.Release|x86.Build.0 = Release|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Debug|x64.Build.0 = Debug|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Debug|x86.Build.0 = Debug|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Release|x64.ActiveCfg = Release|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Release|x64.Build.0 = Release|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Release|x86.ActiveCfg = Release|Any CPU
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C99A61F5-DC5E-456D-B2DB-2EAA06E9FF4C} = {5DB5BB63-BBEF-46B9-A245-3ED088DDF069}
 		{01900994-3F2F-40D0-82E4-3D456AD0919D} = {748827AC-BCBB-4A7E-A30A-7B5C176B6124}
 		{F5BA31AF-5540-46DF-B4E7-60D82AA22244} = {748827AC-BCBB-4A7E-A30A-7B5C176B6124}
+		{8EF29D4D-E33B-42DB-86BA-7054DFE59E44} = {5DB5BB63-BBEF-46B9-A245-3ED088DDF069}
 	EndGlobalSection
 EndGlobal

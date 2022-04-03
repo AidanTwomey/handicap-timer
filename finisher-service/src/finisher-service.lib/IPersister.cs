@@ -2,5 +2,5 @@ namespace finisher_service.lib;
 
 public interface IPersister
 {
-    void Persist(int timestamp);
+    Task<bool> PersistFinishAsync();
 }

@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NSubstitute;
 using TechTalk.SpecFlow;
 
-namespace aidantwomey.src.dotnetcore.handicap_timer.finisher_service.tests.finisher_service.tests.Steps
+namespace finisher_service.tests.Steps
 {
     [Binding]
     public sealed class CalculatorStepDefinitions
@@ -64,7 +64,7 @@ namespace aidantwomey.src.dotnetcore.handicap_timer.finisher_service.tests.finis
         [Then("the finish is persisted")]
         public void AndTheFinishIsPersisted()
         {
-            implementationInstance.Received(1).Persist(0);
+            implementationInstance.Received(1).PersistFinishAsync();
             response.EnsureSuccessStatusCode();
         }
     }
