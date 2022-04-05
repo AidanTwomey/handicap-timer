@@ -21,7 +21,7 @@ jobs:
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run:
-            docker build -f finisher-service -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/finisher-service:${{ github.sha }} finisher-service
+            docker build -f finisher-service/Dockerfile -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/finisher-service:${{ github.sha }} finisher-service
             docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/finisher-service:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
