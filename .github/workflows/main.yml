@@ -17,13 +17,11 @@ jobs:
         - name: 'Build and push image'
           uses: azure/docker-login@v1
           with:
-            context: ./finisher-service
             login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
             username: ${{ secrets.REGISTRY_USERNAME }}
             password: ${{ secrets.REGISTRY_PASSWORD }}
         - run:
-            cd finisher-service
-            docker build . -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/finisher-service:${{ github.sha }}
+            docker build -f finisher-service -t ${{ secrets.REGISTRY_LOGIN_SERVER }}/finisher-service:${{ github.sha }} finisher-service
             docker push ${{ secrets.REGISTRY_LOGIN_SERVER }}/finisher-service:${{ github.sha }}
 
         - name: 'Deploy to Azure Container Instances'
