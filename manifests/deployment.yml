@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "handicaptimerdev-7e28"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "handicaptimerdev-7e28"
+  template:
+    metadata:
+      labels:
+        app: "handicaptimerdev-7e28"
+    spec:
+      containers:
+        - name: "handicaptimerdev-7e28"
+          image: "aidank8sregistry.azurecr.io/handicaptimerdev"
+          ports:
+          - containerPort: 80
