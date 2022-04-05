@@ -19,7 +19,7 @@ namespace finisher_service.tests.Steps
     {
         private readonly HttpClient client;
         private HttpResponseMessage response;
-        private static IPersister implementationInstance = Substitute.For<IPersister>();
+        private static IDataStoreAdapter dataAdapter = Substitute.For<IDataStoreAdapter>();
 
         public CalculatorStepDefinitions(WebApplicationFactory<Startup> factory)
         {
@@ -30,9 +30,17 @@ namespace finisher_service.tests.Steps
 
         private static void ConfigureDependencies(IWebHostBuilder builder)
         {
+            dataAdapter
+                .SaveFinish(Arg.Any<string>(), Arg.Any<double>())
+                .Returns(Task.FromResult(true));
+
+            dataAdapter
+                .IncrementCurrentPlace()
+                .Returns(Task.FromResult(1));
+
             builder.ConfigureTestServices(services =>
             {
-                services.AddSingleton(implementationInstance);
+                services.AddSingleton(dataAdapter);
             });
         }
 
@@ -62,9 +70,10 @@ namespace finisher_service.tests.Steps
         }
 
         [Then("the finish is persisted")]
-        public void AndTheFinishIsPersisted()
+        public async Task AndTheFinishIsPersistedAsync()
         {
-            implementationInstance.Received(1).PersistFinishAsync();
+            await dataAdapter.ReceivedWithAnyArgs(1).SaveFinish(default, default);
+
             response.EnsureSuccessStatusCode();
         }
     }
